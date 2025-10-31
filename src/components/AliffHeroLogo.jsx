@@ -1,133 +1,85 @@
-import { Link } from "react-router-dom";
-import AliffHeroLogo from "./AliffHeroLogo";
+import React from 'react';
 
-function HeroSection() {
+const AliffHeroLogo = ({ className = '' }) => {
   return (
-    <section className="relative min-h-[650px] bg-gradient-to-br from-green-900 via-green-700 to-teal-800 overflow-hidden">
-      {/* Floating Decorative Elements */}
-      <div className="absolute inset-0">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-2 h-2 bg-yellow-400/30 rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animation: `float ${3 + Math.random() * 4}s ease-in-out infinite`,
-              animationDelay: `${Math.random() * 3}s`,
-            }}
-          ></div>
-        ))}
-      </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 py-20 lg:py-28">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+    <div className={`relative w-full max-w-md mx-auto ${className}`}>
+      {/* Card Container */}
+      <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+        
+        {/* Decorative Top Bar */}
+        <div className="h-2 bg-gradient-to-r from-green-600 via-yellow-500 to-green-600"></div>
+        
+        {/* Main Content */}
+        <div className="p-8 md:p-12 flex flex-col items-center text-center">
           
-          {/* Left Content - No Duplicate Stats */}
-          <div className="text-white">
-            {/* Bismillah Header */}
-            <div className="inline-block mb-6 px-6 py-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 shadow-lg">
-              <p className="text-lg tracking-wide">
-                بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ
-              </p>
-            </div>
+          {/* Top Badge - Islamic Education Foundation */}
+          <div className="inline-block bg-green-100 rounded-full px-4 py-1 mb-8">
+            <p className="text-green-700 text-xs font-bold uppercase tracking-wider">
+              ✨ Islamic Education Foundation ✨
+            </p>
+          </div>
 
-            {/* Main Heading */}
-            <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500">
-                الیف Aliff
-              </span>
-              <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-200 to-yellow-200">
-                Foundation
-              </span>
-            </h1>
-
+          {/* Text Section */}
+          <div className="mb-6">
+            {/* Aliff in Urdu */}
+            <p className="text-green-700 text-4xl font-black tracking-wider mb-2">
+              الیـــــــف
+            </p>
+            {/* Aliff in English */}
+            <p className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-yellow-500 text-3xl font-bold mb-2">
+              Aliff
+            </p>
+            
+            {/* Foundation */}
+            <h3 className="text-green-700 text-2xl font-bold mb-3">Foundation</h3>
+            
             {/* Tagline */}
-            <h2 className="text-2xl lg:text-3xl font-semibold text-green-100 mb-4">
+            <p className="text-green-600 text-sm font-semibold italic mb-4">
               Illuminating Young Minds
-            </h2>
-
-            {/* Description */}
-            <p className="text-xl text-green-100 mb-8 leading-relaxed max-w-2xl">
-              Providing authentic Islamic curriculum, resources, and literature
-              to nurture the faith and knowledge of children worldwide 🌙
             </p>
 
-            {/* CTA Buttons - Improved Spacing */}
-            <div className="flex flex-wrap gap-4">
-              <Link
-                to="/products/all"
-                className="group px-8 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-gray-900 font-bold rounded-2xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-3 cursor-pointer"
-              >
-                <span>Browse Products</span>
-                <svg
-                  className="w-5 h-5 transform group-hover:translate-x-1 transition-transform"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M13 7l5 5m0 0l-5 5m5-5H6"
-                  />
-                </svg>
-              </Link>
+            {/* Description */}
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Promoting authentic Islamic education, resources, and literature to nurture faith and knowledge worldwide
+            </p>
+          </div>
 
-              <Link
-                to="/learning-hub"
-                className="px-8 py-4 bg-white/10 backdrop-blur-md text-white font-bold rounded-2xl border-2 border-white/30 hover:bg-white/20 transition-all duration-300 flex items-center gap-3 cursor-pointer"
-              >
-                <span>Free Resources</span>
-                <span className="text-xl">📚</span>
-              </Link>
+          {/* Stats */}
+          <div className="flex gap-4 justify-center mb-8 flex-wrap">
+            <div className="bg-green-50 rounded-lg px-4 py-2">
+              <p className="text-yellow-600 font-bold text-lg">500+</p>
+              <p className="text-green-700 text-xs font-semibold">Resources</p>
+            </div>
+            <div className="bg-green-50 rounded-lg px-4 py-2">
+              <p className="text-yellow-600 font-bold text-lg">50K+</p>
+              <p className="text-green-700 text-xs font-semibold">Downloads</p>
+            </div>
+            <div className="bg-green-50 rounded-lg px-4 py-2">
+              <p className="text-yellow-600 font-bold text-lg">30+</p>
+              <p className="text-green-700 text-xs font-semibold">Countries</p>
             </div>
           </div>
 
-          {/* Right - ALIFF HERO LOGO COMPONENT */}
-          <div className="relative lg:pl-8">
-            {/* Glow Effect Background */}
-            <div className="absolute -inset-4 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-3xl opacity-20 blur-3xl animate-pulse"></div>
-
-            {/* Aliff Logo Component */}
-            <div className="relative">
-              <AliffHeroLogo className="w-full max-w-md mx-auto" />
-
-              {/* 100% Free Badge */}
-              <div className="absolute -top-6 -right-6 bg-gradient-to-br from-green-500 to-green-700 text-white px-6 py-3 rounded-full shadow-2xl font-bold text-lg animate-bounce">
-                ⭐ 100% Free
-              </div>
-            </div>
+          {/* CTA Buttons */}
+          <div className="flex gap-3 justify-center w-full flex-wrap">
+            <button className="bg-gradient-to-r from-green-600 to-green-700 text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 cursor-pointer">
+              Explore Now
+            </button>
+            <button className="border-2 border-green-600 text-green-700 px-8 py-3 rounded-lg font-semibold hover:bg-green-50 transition-all duration-300 cursor-pointer">
+              Learn More
+            </button>
           </div>
         </div>
-      </div>
 
-      {/* Bottom Wave */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg viewBox="0 0 1440 120" fill="none" className="w-full">
-          <path
-            d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"
-            fill="white"
-          />
-        </svg>
-      </div>
+        {/* Decorative Bottom Bar */}
+        <div className="h-2 bg-gradient-to-r from-green-600 via-yellow-500 to-green-600"></div>
 
-      {/* Float Animation */}
-      <style jsx>{`
-        @keyframes float {
-          0%,
-          100% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-20px);
-          }
-        }
-      `}</style>
-    </section>
+        {/* Corner Decorations */}
+        <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-green-300 rounded-tr-lg"></div>
+        <div className="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 border-green-300 rounded-bl-lg"></div>
+      </div>
+    </div>
   );
-}
+};
 
-export default HeroSection;
+export default AliffHeroLogo;

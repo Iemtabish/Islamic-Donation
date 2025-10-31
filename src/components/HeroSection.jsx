@@ -35,7 +35,7 @@ function HeroSection() {
             {/* Main Heading */}
             <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500">
-                الیف Aliff
+             الیف Aliff
               </span>
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-200 to-yellow-200">
@@ -137,7 +137,7 @@ function HeroSection() {
       </div>
 
       {/* Float Animation */}
-      <style jsx>{`
+      <style>{`
         @keyframes float {
           0%,
           100% {
